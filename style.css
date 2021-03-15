@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{ 
+    display: flex;
+    align-items: center;
+    background-color: #00b3e3;
+    height: 90px;
+    padding: 0 20px;
+}
+
+.navbar-hide{
+    display: hide;
+}
+
+.navbar-logo{
+    height: 65px;
+}
+
