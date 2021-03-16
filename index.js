@@ -10,25 +10,38 @@ const database = [
         however, Leonardo may have continued working on it as late as 1517. It was 
         acquired by King Francis I of France and is now the property of the French 
         Republic itself, on permanent display at the Louvre, Paris since 1797.`
-    }
+    },
+
+    {
+        title: 'David',
+        attribute: 'Gian Lorenzo Bernini',
+        date: '1623-1624',
+        img: './img/src/david.jpg',
+        text: `The subject of the work is the biblical David, about to throw the stone
+         that will bring down Goliath, which will allow David to behead him. Compared 
+         to earlier works on the same theme (notably the David of Michelangelo), the 
+         sculpture broke new ground in its implied movement and its psychological 
+         intensity.`
+    },
 ]
 
 
 // Generates page content from database
 function generateContent() {
-    
-    const contentContainer = document.createElement('div');
-    contentContainer.setAttribute('class', 'container')
-    document.body.appendChild(contentContainer)
-
     for (i = 0; i < database.length; i++) {
-        
+
+        // Creates div to contain content
+        const contentContainer = document.createElement('div');
+        contentContainer.setAttribute('class', 'container');
+        contentContainer.setAttribute('id', i);
+        document.body.appendChild(contentContainer);
+
         // Generates Image
         const img = document.createElement('img');
         img.setAttribute('src', database[i].img);
         img.setAttribute('class', 'img');
         contentContainer.appendChild(img);
-        
+
         // Generates Title
         const title = document.createElement('h2');
         title.innerHTML = database[i].title;
@@ -46,12 +59,12 @@ function generateContent() {
         date.innerHTML = database[i].date;
         date.setAttribute('class', 'date');
         contentContainer.appendChild(date);
-        
+
         // Generates Text Content
         const text = document.createElement('p');
         text.innerHTML = database[i].text;
         text.setAttribute('class', 'text');
-        contentContainer.appendChild(text);   
+        contentContainer.appendChild(text);
     }
 }
 
@@ -68,7 +81,7 @@ $(window).on('scroll', () => {
         navbar.removeClass('navbar-scroll');
         logo.removeClass('navbar-logo-scroll');
     }
-   
+
 
 
 });
