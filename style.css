@@ -37,7 +37,7 @@
 }
 
 .cover-btn{
-    border-radius: 5px;
+    border-radius: 1px;
     padding: 10px 15px;
     font-size: 1em;
     font-weight: 500;
@@ -59,10 +59,22 @@
     background-color: #00b3e3;
     height: 70px;
     padding: 0 20px;
+    position: sticky;
+    top: 0;
+    transition: height .3s;
+}
+
+.navbar-scroll{
+    height: 45px;
 }
 
 .navbar-logo{
     height: 55px;
+    transition: height .3s;
+}
+
+.navbar-logo-scroll{
+    height: 35px;
 }
 
 .container{

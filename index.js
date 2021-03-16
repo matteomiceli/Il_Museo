@@ -14,7 +14,7 @@ const database = [
 ]
 
 
-
+// Generates page content from database
 function generateContent() {
     
     const contentContainer = document.createElement('div');
@@ -56,6 +56,21 @@ function generateContent() {
 }
 
 // Sticky Nav
-$(window).onscroll = 
+$(window).on('scroll', () => {
+    const navbar = $('.navbar');
+    const logo = $('.navbar-logo');
+    const pos = $(window).scrollTop();
+    console.log(pos);
+    if (pos > 415) {
+        navbar.addClass('navbar-scroll');
+        logo.addClass('navbar-logo-scroll');
+    } else if (pos <= 415) {
+        navbar.removeClass('navbar-scroll');
+        logo.removeClass('navbar-logo-scroll');
+    }
+   
+
+
+});
 
 generateContent();
